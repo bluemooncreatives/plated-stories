@@ -1,6 +1,7 @@
 {
-  "name": "polite-chaos",
+  "name": "plated-stories",
   "version": "0.1.0",
+  "description": "Plated Stories is a content creation studio dedicated to visually rich Food & Beverage storytelling.",
   "private": true,
   "scripts": {
     "dev": "next dev",
