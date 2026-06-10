@@ -6,6 +6,7 @@ import FeaturedWork from "@/components/FeaturedWork/FeaturedWork";
 import TeamCards from "@/components/TeamCards/TeamCards";
 import ClientReviews from "@/components/ClientReviews/ClientReviews";
 import Spotlight from "@/components/Spotlight/Spotlight";
+import BrandGallery from "@/components/BrandGallery/BrandGallery";
 import CTACard from "@/components/CTACard/CTACard";
 import Footer from "@/components/Footer/Footer";
 import Copy from "@/components/Copy/Copy";
@@ -95,6 +96,8 @@ const Page = () => {
                 <h1>a creative content agency</h1>
               </Copy>
             </div>
+
+            <BrandGallery />
           </div>
         </section>
 
