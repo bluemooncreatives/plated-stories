@@ -39,7 +39,11 @@ const Page = () => {
           <div className="hero-content-main">
             <div className="hero-header">
               <Copy animateOnScroll={false} delay={isInitialLoad ? 5.75 : 0.75}>
-                <h1>We craft stories that people can taste</h1>
+                <h1>
+                  We craft stories
+                  <br /> that people
+                  <br /> can taste
+                </h1>
               </Copy>
             </div>
 
@@ -54,10 +58,13 @@ const Page = () => {
               <Copy animateOnScroll={false} delay={isInitialLoad ? 6.05 : 1.15}>
                 <p className="lg">
                   We create high-quality visual content for restaurants, cafes,
-                  lifestyle brands and entrepreneurs that goes beyond aesthetics.
-                  Through strategic storytelling, creativity and premium
-                  production, we help brands build meaningful connections and
-                  stand out in a crowded digital world.
+                  lifestyle <br />
+                  brands and entrepreneurs that goes beyond aesthetics. Through
+                  strategic <br />
+                  storytelling, creativity and premium production, we help brands
+                  build <br />
+                  meaningful connections and stand out in <br />
+                  a crowded digital world.
                 </p>
               </Copy>
 

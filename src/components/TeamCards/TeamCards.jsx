@@ -99,11 +99,21 @@ export default function TeamCards() {
             const translateX = -progress * maxTranslate;
             gsap.set(stickyHeader, { x: translateX });
 
+            // Each card takes this fraction of the scroll to cross the heading.
+            const cardCrossDuration = 0.5;
+            // Spread the cards' launch times evenly so the last card finishes
+            // right at the end of the scroll, regardless of how many cards
+            // there are (this layout originally assumed exactly 5).
+            const staggerStep =
+              cards.length > 1
+                ? (1 - cardCrossDuration) / (cards.length - 1)
+                : 0;
+
             cards.forEach((card, index) => {
-              const delay = index * 0.1125;
+              const delay = index * staggerStep;
               const cardProgress = Math.max(
                 0,
-                Math.min((progress - delay) * 2, 1)
+                Math.min((progress - delay) / cardCrossDuration, 1)
               );
 
               if (cardProgress > 0) {
