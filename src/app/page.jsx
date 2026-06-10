@@ -39,22 +39,25 @@ const Page = () => {
           <div className="hero-content-main">
             <div className="hero-header">
               <Copy animateOnScroll={false} delay={isInitialLoad ? 5.75 : 0.75}>
-                <h1>Crafting Digital Worlds with a Bit of Mischief</h1>
+                <h1>We craft stories that people can taste</h1>
               </Copy>
             </div>
 
             <div className="hero-footer-outer">
               <Copy animateOnScroll={false} delay={isInitialLoad ? 6.35 : 1.65}>
-                <p className="sm">&copy; Codegrid Dept.</p>
-                <p className="sm">( Workroom 101 )</p>
+                <p className="sm">&copy; Plated Stories</p>
+                <p className="sm">( Creative Content Agency )</p>
               </Copy>
             </div>
 
             <div className="hero-footer">
               <Copy animateOnScroll={false} delay={isInitialLoad ? 6.05 : 1.15}>
                 <p className="lg">
-                  We build visuals, stories, and systems for people who like
-                  their creativity a little unpredictable.
+                  We create high-quality visual content for restaurants, cafes,
+                  lifestyle brands and entrepreneurs that goes beyond aesthetics.
+                  Through strategic storytelling, creativity and premium
+                  production, we help brands build meaningful connections and
+                  stand out in a crowded digital world.
                 </p>
               </Copy>
 
@@ -82,7 +85,7 @@ const Page = () => {
 
             <div className="studio-header-row">
               <Copy delay={0.95}>
-                <h1>a content creation studio</h1>
+                <h1>a creative content agency</h1>
               </Copy>
             </div>
           </div>
@@ -96,19 +99,28 @@ const Page = () => {
 
             <Copy animateOnScroll={true}>
               <p className="lg">
-                Polite Chaos is a creative studio shaping digital worlds through
-                motion, color, and story. We blend art and technology to create
-                visuals that move not only on screen but in emotion. Every
-                project is treated like a short film, designed to feel alive,
-                cinematic, and intentional.
+                Plated Stories is a creative content agency specializing in
+                visual storytelling for F&amp;B and lifestyle brands. From
+                concept development and shoot planning to production, editing and
+                content delivery, we manage the entire creative process
+                end-to-end. Our work combines strategy, creativity and
+                high-quality execution to create content that not only looks
+                beautiful but also communicates a brand&rsquo;s identity, engages
+                its audience and supports business growth. Whether it&rsquo;s a
+                cafe, restaurant, home baker, jewellery brand or interior design
+                studio, we help brands tell stories that people remember.
               </p>
 
               <p className="lg">
-                Our work explores the edges of digital expression, from still
-                sketches to fluid 3D experiences. We collaborate with brands,
-                artists, and creators who believe design can feel like art and
-                art can solve real problems. We like ideas that start strange
-                and end beautiful.
+                In a world overflowing with content, numbers alone aren&rsquo;t
+                enough. At Plated Stories, we combine premium production with
+                strategic storytelling to create content that resonates with
+                audiences and aligns with business goals. We don&rsquo;t believe
+                in creating content for the sake of posting &mdash; we focus on
+                crafting stories that build communities, strengthen brand
+                identity and drive meaningful engagement. Every project is
+                approached with creativity, attention to detail and a commitment
+                to delivering work that reflects the unique essence of the brand.
               </p>
             </Copy>
           </div>
@@ -154,8 +166,9 @@ const Page = () => {
             <div className="featured-work-header-copy">
               <Copy animateOnScroll={true} delay={0.25}>
                 <p className="lg">
-                  From motion to concept, pieces born from quiet sketches, late
-                  nights, and just the right amount of chaos.
+                  A look at the brands we&rsquo;ve helped grow &mdash; content
+                  built on storytelling, strategy and premium production across
+                  food, hospitality and lifestyle.
                 </p>
               </Copy>
             </div>
@@ -202,8 +215,8 @@ const Page = () => {
             <div className="client-reviews-header-copy">
               <Copy animateOnScroll={true} delay={0.25}>
                 <p className="lg">
-                  Unfiltered thoughts from the people who survived our creative
-                  process. Or at least that’s what they told us.
+                  Honest words from the founders and brands we&rsquo;ve worked
+                  closely with to bring their stories to life.
                 </p>
               </Copy>
             </div>

@@ -298,7 +298,7 @@ export default function StorySlides() {
             </div>
 
             <div className="profile-name">
-              <p>Behance</p>
+              <p>Plated Stories</p>
             </div>
           </div>
         </div>

@@ -1,38 +1,38 @@
 export const clientReviewsData = [
   {
     review:
-      "They didn’t just redesign our website, they redefined how we talk about ourselves. Every animation, every frame, felt like it actually understood what our brand was trying to say.",
-    clientName: "Noah Keller",
-    clientCompany: "Voxel & Company",
+      "They didn't just make our food look good, they gave our brand a story. Every reel and frame felt intentional, and our page finally reflects the quality we serve.",
+    clientName: "Cafe Owner",
+    clientCompany: "Restaurant & Cafe",
   },
   {
     review:
-      "Working with them felt more like an art residency than a project. They listened, challenged us, and turned half-formed ideas into something that actually moved people.",
-    clientName: "Lina Duarte",
-    clientCompany: "Studio Valea",
+      "Working with Plated Stories felt like a real collaboration. They understood our vision, refined it, and delivered content that genuinely connected with the right audience.",
+    clientName: "Brand Founder",
+    clientCompany: "Lifestyle Brand",
   },
   {
     review:
-      "Their sense of timing and motion design is ridiculous in the best way. It’s like everything they touch ends up looking intentional, alive, and a little bit unpredictable.",
-    clientName: "Kenji Mori",
-    clientCompany: "Framefield",
+      "The founder-led storytelling changed everything for us. Our community grew, engagement went up, and people started recognizing our signature dishes.",
+    clientName: "Cloud Kitchen",
+    clientCompany: "F&B Brand",
   },
   {
     review:
-      "We came to them for a quick rebrand and left with a full-on visual identity system. It’s rare to find a team that mixes that level of craft with this much curiosity.",
-    clientName: "Amara Singh",
-    clientCompany: "Lumenwave",
+      "Premium production with a clear strategy behind it. They balance aesthetics and impact in a way that actually moves the needle for the business.",
+    clientName: "Studio Owner",
+    clientCompany: "Interior Design",
   },
   {
     review:
-      "They have that weird ability to make complicated ideas look effortless. What started as a motion study turned into one of our most talked-about campaigns.",
-    clientName: "Felix Turner",
-    clientCompany: "Orbit Labs",
+      "From the content deck to the final delivery, the whole process was seamless. Consistent, high-quality content delivered on time, every month.",
+    clientName: "Boutique Owner",
+    clientCompany: "Jewellery Brand",
   },
   {
     review:
-      "From day one, they treated the project like a shared experiment. We threw chaos at them and somehow they made it beautiful. That’s their real magic.",
-    clientName: "Isolde Rey",
-    clientCompany: "Northshore Films",
+      "They care about quality over numbers, and it shows. Our brand finally feels authentic, visually compelling and unmistakably ours.",
+    clientName: "Home Baker",
+    clientCompany: "F&B Brand",
   },
 ];

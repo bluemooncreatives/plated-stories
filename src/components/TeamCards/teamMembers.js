@@ -1,42 +1,26 @@
 export const teamMembers = [
   {
     id: "card-1",
-    name: "Lina Duarte",
+    name: "Aayush Lath",
     img: "/team-cards/team-member-1.jpg",
-    alt: "Lina Duarte",
+    alt: "Aayush Lath",
     description:
-      "Visual designer and chaos theorist. Loves asymmetry, strong coffee, and turning color palettes into emotional damage.",
+      "Co-founder. A Commerce graduate from NM College with a perfectionist's eye for detail. He co-founded Dine&Discover before Plated Stories, where his passion for food videography and styling shapes content that captures attention and holds the highest standard of execution.",
   },
   {
     id: "card-2",
-    name: "Kenji Mori",
+    name: "Shiven More",
     img: "/team-cards/team-member-2.jpg",
-    alt: "Kenji Mori",
+    alt: "Shiven More",
     description:
-      "3D artist, lighting whisperer, and part-time philosopher. Spends half his life rendering and the other half pretending it is done.",
+      "Content Head. A Bachelor of Mass Media graduate from Thakur College who turned a love of food and photography into a craft. Known for his sharp creative vision, he brings together creativity, strategy and meticulous execution on every project.",
   },
   {
     id: "card-3",
-    name: "Amara Singh",
+    name: "Harsimran Arora",
     img: "/team-cards/team-member-3.jpg",
-    alt: "Amara Singh",
+    alt: "Harsimran Arora",
     description:
-      "Motion director and timing addict. Can make anything feel cinematic — even an error message.",
-  },
-  {
-    id: "card-4",
-    name: "Felix Turner",
-    img: "/team-cards/team-member-4.jpg",
-    alt: "Felix Turner",
-    description:
-      "Creative technologist who codes feelings. Loves shaders, hates meetings, lives somewhere between HTML and heartbreak.",
-  },
-  {
-    id: "card-5",
-    name: "Isolde Rey",
-    img: "/team-cards/team-member-5.jpg",
-    alt: "Isolde Rey",
-    description:
-      "Producer and chaos organizer. Keeps everyone alive, on schedule, and slightly over-caffeinated. Probably the only adult here.",
+      "Brand Relations & PR. A BSc Applied Psychology graduate from NMIMS Mumbai who blends psychology, creativity and strategy. She builds meaningful partnerships and, with a people-centric approach, drives the agency's growth and vision.",
   },
 ];

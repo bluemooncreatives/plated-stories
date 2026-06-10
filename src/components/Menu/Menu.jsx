@@ -497,13 +497,13 @@ const Menu = ({ pageRef }) => {
           >
             <div className="menu-content-group">
               <p>&copy; Plated Stories</p>
-              <p>Seaside Studio Block</p>
-              <p>Oslo</p>
+              <p>Mumbai</p>
+              <p>India</p>
             </div>
 
             <div className="menu-content-group">
-              <p>Edition</p>
-              <p>Late Vol. 04</p>
+              <p>Studio</p>
+              <p>Creative Content Agency</p>
             </div>
 
             <div className="menu-content-group">
@@ -512,8 +512,8 @@ const Menu = ({ pageRef }) => {
             </div>
 
             <div className="menu-content-group">
-              <p>Hotline</p>
-              <p>+47 9824 554321</p>
+              <p>Focus</p>
+              <p>F&amp;B &amp; Lifestyle Brands</p>
             </div>
           </div>
           <div
@@ -525,18 +525,18 @@ const Menu = ({ pageRef }) => {
             <div className="menu-content-group">
               <p>Field Log</p>
 
-              <a href="https://www.instagram.com/codegridweb/" target="_blank">
+              <a href="https://www.instagram.com/platedstories" target="_blank">
                 Instagram
               </a>
 
-              <a href="https://www.youtube.com/@codegrid" target="_blank">
-                YouTube
+              <a href="mailto:hi@platedstories.com" target="_blank">
+                Email
               </a>
             </div>
 
             <div className="menu-content-group">
-              <p>Language</p>
-              <p>Human</p>
+              <p>Services</p>
+              <p>Curation, Direction, Shooting &amp; Editing</p>
             </div>
 
             <div className="menu-content-group">

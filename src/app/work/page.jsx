@@ -16,7 +16,7 @@ const Page = () => {
     () => [
       {
         index: "01",
-        name: "Citychild",
+        name: "Cafe Srinivasa",
         href: "/sample-project",
         variant: "variant-1",
         images: [
@@ -27,7 +27,7 @@ const Page = () => {
       },
       {
         index: "02",
-        name: "Chrome Saint",
+        name: "Restaurants & Cafes",
         href: "/sample-project",
         variant: "variant-2",
         images: [
@@ -38,7 +38,7 @@ const Page = () => {
       },
       {
         index: "03",
-        name: "G-Dream",
+        name: "Lifestyle Brands",
         href: "/sample-project",
         variant: "variant-2",
         images: [
@@ -49,7 +49,7 @@ const Page = () => {
       },
       {
         index: "04",
-        name: "Stoneface",
+        name: "Jewellery & Watches",
         href: "/sample-project",
         variant: "variant-3",
         images: [
@@ -60,7 +60,7 @@ const Page = () => {
       },
       {
         index: "05",
-        name: "Amber Cloak",
+        name: "Interior Design",
         href: "/sample-project",
         variant: "variant-1",
         images: [
@@ -71,7 +71,7 @@ const Page = () => {
       },
       {
         index: "06",
-        name: "Paper Blade",
+        name: "Home Bakers",
         href: "/sample-project",
         variant: "variant-2",
         images: [

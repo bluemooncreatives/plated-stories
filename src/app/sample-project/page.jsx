@@ -8,8 +8,8 @@ const Page = () => {
     <div className="sample-project-page">
       <section className="project-header">
         <Copy delay={0.75}>
-          <p className="lg">Engineered Perfection</p>
-          <h1>Gunmetal Dream</h1>
+          <p className="lg">Featured Case Study</p>
+          <h1>Cafe Srinivasa</h1>
         </Copy>
       </section>
 
@@ -22,27 +22,37 @@ const Page = () => {
       <section className="project-details">
         <Copy animateOnScroll={true}>
           <div className="details">
-            <p>Concept</p>
+            <p>The Problem</p>
             <h3>
-              A visual narrative set in a metallic dreamscape, Gunmetal Dream
-              explores the tension between machine and memory where emotion
-              flickers inside engineered perfection.
+              When Cafe Srinivasa partnered with Plated Stories, the brand had
+              around 3,000 Instagram followers but lacked a strong digital
+              identity. While the food experience was exceptional, its social
+              media failed to reflect the quality, story and authenticity behind
+              the brand &mdash; making it hard to reach new audiences or build a
+              loyal community.
             </h3>
           </div>
 
           <div className="details">
-            <p>Cycle</p>
-            <h3>2025</h3>
+            <p>The Approach</p>
+            <h3>
+              We built a content ecosystem balancing storytelling, entertainment
+              and food appeal. By introducing founder-led storytelling with Mr.
+              Naman, we highlighted the stories behind the dishes and the
+              philosophy of the cafe. Combined with consistent posting and
+              creative experimentation, this shaped a distinctive online
+              presence.
+            </h3>
           </div>
 
           <div className="details">
-            <p>Form</p>
-            <h3>Digital Art Series</h3>
+            <p>Duration</p>
+            <h3>9 Months</h3>
           </div>
 
           <div className="details">
-            <p>Medium</p>
-            <h3>3D Design and Motion</h3>
+            <p>Deliverables</p>
+            <h3>Founder Storytelling, Reels &amp; Carousels</h3>
           </div>
 
           <div className="details">
@@ -89,36 +99,44 @@ const Page = () => {
       <section className="project-details">
         <Copy animateOnScroll={true}>
           <div className="details">
-            <p>Assembly</p>
-            <h3>Rhea Korrin</h3>
+            <p>The Solution</p>
+            <h3>
+              Over nine months, Plated Stories managed the entire creative
+              process &mdash; from ideation and scripting to production, editing
+              and strategy. Our content focused on high-quality food and
+              lifestyle visuals, founder-led storytelling, relatable
+              trend-adapted reels, creative carousel concepts and consistent
+              brand messaging, transforming the page into a thriving
+              content-driven community.
+            </h3>
           </div>
 
           <div className="details">
-            <p>Sound</p>
-            <h3>Ezra Lowell</h3>
+            <p>Followers</p>
+            <h3>3,000 &rarr; 10,000+</h3>
           </div>
 
           <div className="details">
-            <p>Direction of Form</p>
-            <h3>Jun Park</h3>
+            <p>Community</p>
+            <h3>Highly Engaged &amp; Loyal</h3>
           </div>
 
           <div className="details">
-            <p>Production</p>
-            <h3>Isla Trent</h3>
+            <p>Brand Impact</p>
+            <h3>Stronger Recognition &amp; Recall</h3>
           </div>
 
           <div className="details">
-            <p>Vision Lead</p>
-            <h3>Kael Morrow</h3>
+            <p>Signature Win</p>
+            <h3>Mulbagal Dosa &mdash; a best-seller</h3>
           </div>
         </Copy>
       </section>
 
       <section className="next-project">
         <Copy animateOnScroll={true}>
-          <p style={{ marginBottom: "1rem" }}>02 - 05</p>
-          <h2>Next</h2>
+          <p style={{ marginBottom: "1rem" }}>The Standout Campaign</p>
+          <h2>Mulbagal Dosa</h2>
         </Copy>
 
         <div className="next-project-img">
@@ -128,7 +146,37 @@ const Page = () => {
         </div>
 
         <Copy animateOnScroll={true}>
-          <h3>Stoneface</h3>
+          <h3>
+            One standout campaign featured the launch of the Mulbagal Dosa, with
+            Mr. Naman sharing its story while visually appealing footage
+            showcased the preparation process. The reel gained exceptional
+            traction and played a key role in making the dish one of the
+            cafe&rsquo;s best-selling offerings.
+          </h3>
+
+          <div
+            style={{
+              display: "flex",
+              gap: "1.5rem",
+              marginTop: "2rem",
+              flexWrap: "wrap",
+            }}
+          >
+            <a
+              href="https://www.instagram.com/cafesrinivasa"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Cafe Srinivasa
+            </a>
+            <a
+              href="https://www.instagram.com/reel/DRzQ5YJjI10/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Watch the Mulbagal Reel
+            </a>
+          </div>
         </Copy>
       </section>
 

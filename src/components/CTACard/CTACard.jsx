@@ -11,15 +11,16 @@ const CTACard = () => {
         <div className="cta-copy">
           <div className="cta-col">
             <Copy animateOnScroll={true}>
-              <p className="sm">Part of the collective</p>
+              <p className="sm">What we do</p>
             </Copy>
           </div>
 
           <div className="cta-col">
             <Copy animateOnScroll={true}>
               <p className="lg">
-                Polite Chaos is connected to The Noise Network, a collective of
-                studios exploring digital art as emotion, motion, and code.
+                Monthly &amp; project-based content curation, creative direction,
+                shooting and editing for F&amp;B and lifestyle brands that want
+                their content to feel as considered as their craft.
               </p>
             </Copy>
 
@@ -29,7 +30,7 @@ const CTACard = () => {
               variant="dark"
               href="/contact"
             >
-              Drop your portfolio
+              Start your story
             </Button>
           </div>
         </div>
@@ -38,22 +39,23 @@ const CTACard = () => {
           <div className="cta-card-copy">
             <div className="cta-card-col">
               <Copy animateOnScroll={true}>
-                <h3>Secret Department</h3>
+                <h3>Why Plated Stories</h3>
               </Copy>
             </div>
 
             <div className="cta-card-col">
               <Copy animateOnScroll={true}>
                 <p>
-                  We like to think we build order out of chaos, but it’s usually
-                  the other way around. Every project starts as a mess of
-                  sketches and motion tests.
+                  In a world overflowing with content, numbers alone aren&rsquo;t
+                  enough. We combine premium production with strategic
+                  storytelling to create content that resonates with audiences
+                  and aligns with business goals.
                 </p>
 
                 <p>
-                  If something feels too polished, we probably broke it on
-                  purpose and rebuilt it slightly wrong, just enough to feel
-                  human.
+                  We don&rsquo;t create content for the sake of posting. We focus
+                  on crafting stories that build communities, strengthen brand
+                  identity and drive meaningful engagement.
                 </p>
               </Copy>
 
@@ -64,7 +66,7 @@ const CTACard = () => {
                 icon={MdArticle}
                 href="/studio"
               >
-                Read the theory
+                About the studio
               </Button>
             </div>
           </div>

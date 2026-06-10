@@ -199,30 +199,30 @@ const Page = () => {
       <div className="contact-copy">
         <div className="contact-col">
           <Copy delay={0.8}>
-            <h2>Things in motion stay interesting</h2>
+            <h2>Let&rsquo;s craft a story people can taste</h2>
           </Copy>
         </div>
 
         <div className="contact-col">
           <div className="contact-group">
             <Copy delay={0.8}>
-              <p className="sm">Focus</p>
-              <p>Motion Worlds</p>
-              <p>Dream Engineering</p>
-              <p>Strange Branding</p>
+              <p className="sm">Services</p>
+              <p>Content Curation</p>
+              <p>Creative Direction</p>
+              <p>Shooting &amp; Editing</p>
             </Copy>
           </div>
 
           <div className="contact-group">
             <Copy delay={1.2}>
               <p className="sm">Base</p>
-              <p>Old Harbour District, Oslo</p>
+              <p>Mumbai, India</p>
             </Copy>
           </div>
 
           <div className="contact-mail">
             <Button delay={1.3} href="/">
-              studio@platedstories.com
+              hi@platedstories.com
             </Button>
           </div>
 
@@ -239,14 +239,14 @@ const Page = () => {
       <div className="contact-footer">
         <div className="container">
           <Copy delay={1.6} animateOnScroll={false}>
-            <p className="sm">Made in Motion</p>
+            <p className="sm">Crafted with Care</p>
           </Copy>
 
           <div className="contact-socials">
             <Copy delay={1.7} animateOnScroll={false}>
               <a
                 className="sm"
-                href="https://www.instagram.com/codegridweb/"
+                href="https://www.instagram.com/platedstories"
                 target="_blank"
               >
                 Instagram
@@ -256,20 +256,10 @@ const Page = () => {
             <Copy delay={1.8} animateOnScroll={false}>
               <a
                 className="sm"
-                href="https://www.youtube.com/@codegrid"
+                href="mailto:hi@platedstories.com"
                 target="_blank"
               >
-                YouTube
-              </a>
-            </Copy>
-
-            <Copy delay={1.9} animateOnScroll={false}>
-              <a
-                className="sm"
-                href="https://x.com/codegridweb"
-                target="_blank"
-              >
-                Twitter
+                Email
               </a>
             </Copy>
           </div>
