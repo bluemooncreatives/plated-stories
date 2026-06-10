@@ -22,7 +22,7 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
         "Geist Mono",
         "PP Neue Montreal",
         "PP Pangram Sans",
-        "Big Shoulders Display",
+        "DM Sans",
       ];
       const fontCheckPromises = customFonts.map((fontFamily) => {
         return document.fonts.check(`16px ${fontFamily}`);

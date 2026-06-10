@@ -468,7 +468,9 @@ const Menu = ({ pageRef }) => {
               navigateWithTransition("/", isMenuOpen ? toggleMenu : null);
             }}
           >
-            <img src="/logo.svg" alt="" />
+            <span className="nav-logo-frame">
+              <img src="/logo.png" alt="Plated Stories" />
+            </span>
           </a>
         </div>
 
@@ -494,7 +496,7 @@ const Menu = ({ pageRef }) => {
             }}
           >
             <div className="menu-content-group">
-              <p>&copy; Polite Chaos</p>
+              <p>&copy; Plated Stories</p>
               <p>Seaside Studio Block</p>
               <p>Oslo</p>
             </div>
@@ -506,7 +508,7 @@ const Menu = ({ pageRef }) => {
 
             <div className="menu-content-group">
               <p>Say Hello</p>
-              <p>hi@politechaos.com</p>
+              <p>hi@platedstories.com</p>
             </div>
 
             <div className="menu-content-group">
@@ -539,8 +541,8 @@ const Menu = ({ pageRef }) => {
 
             <div className="menu-content-group">
               <p>Credits</p>
-              <p>Made by Codegrid</p>
-              <p>MWT. OCT2025</p>
+              <p>Made by Blue Moon Creatives</p>
+              <p>2026</p>
             </div>
           </div>
         </div>

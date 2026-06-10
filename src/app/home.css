@@ -48,6 +48,75 @@
   align-items: flex-end;
 }
 
+.home-studio-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100svh;
+  background-color: var(--base-100);
+}
+
+.home-studio-section .studio-header {
+  position: relative;
+  width: 100%;
+  height: 90svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-studio-section .studio-header .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-studio-section .studio-header .studio-header-row:nth-child(1) {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home-studio-section .studio-header .studio-header-row:nth-child(2) {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.home-studio-section .studio-header .studio-header-row h1 {
+  font-size: 8vw;
+}
+
+.home-studio-section .studio-header .studio-brand-text {
+  color: var(--base-500);
+}
+
+.home-studio-section .studio-copy .container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding-bottom: 10rem;
+}
+
+.home-studio-section .studio-copy .studio-copy-img {
+  width: 30%;
+  margin: 0 auto;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.home-studio-section .studio-copy .studio-copy-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-studio-section .studio-copy p {
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 4rem;
+}
+
 .featured-work {
   position: relative;
   width: 100%;
@@ -123,6 +192,11 @@
     gap: 2rem;
   }
 
+  .home-studio-section .studio-copy .studio-copy-img,
+  .home-studio-section .studio-copy p {
+    width: 100%;
+  }
+
   .featured-work .featured-work-header,
   .featured-work .featured-work-header-content,
   .featured-work .featured-work-header-content .featured-work-header-copy,
@@ -141,5 +215,11 @@
   .featured-work-list .row {
     width: 100% !important;
     flex-direction: column;
+  }
+}
+
+@media (min-width: 2400px) {
+  .home-studio-section .studio-header .studio-header-row h1 {
+    font-size: 20rem;
   }
 }

@@ -47,7 +47,7 @@ const Page = () => {
 
           <div className="details">
             <p>Studio</p>
-            <h3>Polite Chaos</h3>
+            <h3>Plated Stories</h3>
           </div>
         </Copy>
       </section>

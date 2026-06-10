@@ -42,7 +42,7 @@ const Preloader = () => {
       const waitForFonts = async () => {
         try {
           await document.fonts.ready;
-          const customFonts = ["Big Shoulders Display"];
+          const customFonts = ["DM Sans"];
           const fontCheckPromises = customFonts.map((fontFamily) => {
             return document.fonts.check(`16px ${fontFamily}`);
           });
@@ -202,7 +202,7 @@ const Preloader = () => {
       </div>
 
       <div className="preloader-header">
-        <h1>Polite Chaos</h1>
+        <h1>Plated Stories</h1>
       </div>
     </>
   );

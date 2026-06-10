@@ -32,13 +32,15 @@ const Page = () => {
         <div className="container">
           <div className="studio-header-row">
             <Copy delay={0.8}>
-              <h1>We are polite</h1>
+              <h1>
+                We are <span className="studio-brand-text">Plated Stories</span>
+              </h1>
             </Copy>
           </div>
 
           <div className="studio-header-row">
             <Copy delay={0.95}>
-              <h1>We are chaos</h1>
+              <h1>a content creation studio</h1>
             </Copy>
           </div>
         </div>

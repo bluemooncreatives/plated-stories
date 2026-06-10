@@ -5,7 +5,7 @@
   --base-200: #ccccc4;
   --base-300: #8c7e77;
   --base-400: #1a1614;
-  --base-500: #ff6e14;
+  --base-500: #e84e38;
 
   --accent-1: #3d2fa9;
   --accent-2: #a92f78;
@@ -38,7 +38,7 @@ h2,
 h3,
 h4 {
   text-transform: uppercase;
-  font-family: "Big Shoulders Display";
+  font-family: "DM Sans";
   font-weight: 900;
   line-height: 0.9;
   letter-spacing: -0.125rem;

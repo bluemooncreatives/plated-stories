@@ -32,7 +32,11 @@
 }
 
 .studio-page .studio-header .container .studio-header-row h1 {
-  font-size: 14vw;
+  font-size: 8vw;
+}
+
+.studio-page .studio-header .studio-brand-text {
+  color: var(--base-500);
 }
 
 .studio-page .studio-copy .container {

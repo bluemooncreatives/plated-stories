@@ -226,11 +226,11 @@ const Footer = () => {
           </div>
 
           <div className="footer-author">
-            <p>Developed by Codegrid</p>
+            <p>Developed by Blue Moon Creatives</p>
           </div>
 
           <div className="footer-copyright">
-            <p>&copy; Polite Chaos</p>
+            <p>&copy; Plated Stories</p>
           </div>
         </div>
       </div>

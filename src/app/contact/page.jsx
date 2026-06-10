@@ -222,15 +222,15 @@ const Page = () => {
 
           <div className="contact-mail">
             <Button delay={1.3} href="/">
-              studio@politechaos.com
+              studio@platedstories.com
             </Button>
           </div>
 
           <div className="contact-group">
             <Copy delay={1.4}>
               <p className="sm">Credits</p>
-              <p>Created by Codegrid</p>
-              <p>Edition 2025</p>
+              <p>Created by Blue Moon Creatives</p>
+              <p>Edition 2026</p>
             </Copy>
           </div>
         </div>
@@ -274,7 +274,7 @@ const Page = () => {
             </Copy>
           </div>
           <Copy delay={2} animateOnScroll={false}>
-            <p className="sm">&copy; Polite Chaos</p>
+            <p className="sm">&copy; Plated Stories</p>
           </Copy>
         </div>
       </div>
