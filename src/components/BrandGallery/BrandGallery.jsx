@@ -1,19 +1,88 @@
 "use client";
 import "./BrandGallery.css";
+import { useRef } from "react";
 import { brandGalleryItems } from "./galleryItems.js";
 import Copy from "@/components/Copy/Copy";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CustomEase from "gsap/CustomEase";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
+CustomEase.create("hop", "0.9, 0, 0.1, 1");
 
 export default function BrandGallery() {
+  const galleryRef = useRef(null);
+
+  useGSAP(
+    () => {
+      const items = gsap.utils.toArray(".brand-gallery-item");
+      if (!items.length) return;
+
+      // Each item is driven by its OWN ScrollTrigger, so it reveals the moment
+      // it scrolls into view rather than all firing off the grid at once.
+      items.forEach((item) => {
+        const imgWrap = item.querySelector(".brand-gallery-item-img");
+        const img = item.querySelector("img");
+        const label = item.querySelector(".brand-gallery-item-label");
+
+        // Hidden start — clipped shut, media pre-zoomed, label down.
+        gsap.set(imgWrap, {
+          clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+        });
+        gsap.set(img, { scale: 1.28 });
+        gsap.set(label, { y: 14, autoAlpha: 0 });
+
+        // Fast reveal, played once as the item enters the viewport.
+        const tl = gsap.timeline({
+          scrollTrigger: { trigger: item, start: "top 85%", once: true },
+        });
+        tl.to(imgWrap, {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          duration: 0.3,
+          ease: "hop",
+        })
+          .to(img, { scale: 1.12, duration: 0.3, ease: "hop" }, 0)
+          .to(
+            label,
+            { y: 0, autoAlpha: 1, duration: 0.4, ease: "power3.out" },
+            0.15
+          );
+
+        // Continuous parallax — the media drifts inside its frame on scroll.
+        // The 1.12 resting scale leaves headroom so no edge is ever exposed.
+        gsap.fromTo(
+          img,
+          { yPercent: 5 },
+          {
+            yPercent: -5,
+            ease: "none",
+            scrollTrigger: {
+              trigger: item,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      });
+    },
+    { scope: galleryRef }
+  );
+
   return (
-    <div className="brand-gallery">
+    <div className="brand-gallery" ref={galleryRef}>
       <div className="brand-gallery-grid">
         <div className="brand-gallery-note">
           <Copy animateOnScroll={true}>
             <p className="lg">
-              Plated Stories is a creative content agency specializing 
-              <br />in visual storytelling for F&amp;B and lifestyle brands. 
-              <br />From concept development and shoot planning to production, editing and content
-              delivery, we manage the entire creative process end-to-end.
+              Plated Stories is a creative content agency specializing
+              <br />
+              in visual storytelling for F&amp;B and lifestyle brands.
+              <br />
+              From concept development and shoot planning to production, editing
+              and content delivery, we manage the entire creative process
+              end-to-end.
             </p>
           </Copy>
         </div>
