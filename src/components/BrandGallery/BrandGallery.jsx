@@ -23,7 +23,7 @@ export default function BrandGallery() {
       // it scrolls into view rather than all firing off the grid at once.
       items.forEach((item) => {
         const imgWrap = item.querySelector(".brand-gallery-item-img");
-        const img = item.querySelector("img");
+        const img = item.querySelector("img, video");
         const label = item.querySelector(".brand-gallery-item-label");
 
         // Hidden start — clipped shut, media pre-zoomed, label down.
@@ -93,7 +93,18 @@ export default function BrandGallery() {
             className={`brand-gallery-item brand-gallery-item--${item.position}`}
           >
             <div className="brand-gallery-item-img">
-              <img src={item.img} alt={item.label} />
+              {item.type === "video" ? (
+                <video
+                  src={item.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                />
+              ) : (
+                <img src={item.src} alt={item.label} />
+              )}
             </div>
             <div className="brand-gallery-item-label">
               <p className="sm">{item.label}</p>
