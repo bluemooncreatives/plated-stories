@@ -10,6 +10,7 @@ import BrandGallery from "@/components/BrandGallery/BrandGallery";
 import CTACard from "@/components/CTACard/CTACard";
 import Footer from "@/components/Footer/Footer";
 import Copy from "@/components/Copy/Copy";
+import HeroVisual from "@/components/HeroVisual/HeroVisual";
 import Preloader, { isInitialLoad } from "@/components/Preloader/Preloader";
 import React, { useEffect } from "react";
 import gsap from "gsap";
@@ -36,44 +37,41 @@ const Page = () => {
     <>
       <Preloader />
       <section className="hero">
-        <div className="container">
-          <div className="hero-content-main">
-            <div className="hero-header">
-              <Copy animateOnScroll={false} delay={isInitialLoad ? 5.75 : 0.75}>
-                <h1>
-                  We craft stories
-                  <br /> that people
-                  <br /> can taste
-                </h1>
-              </Copy>
-            </div>
+        <div className="hero-side hero-side-left">
+          <Copy animateOnScroll={false} delay={isInitialLoad ? 5.6 : 0.55}>
+            <h1 className="hero-side-title">
+              We craft stories
+              <br /> that people
+              <br /> can taste
+            </h1>
+          </Copy>
+        </div>
 
-            <div className="hero-footer-outer">
-              <Copy animateOnScroll={false} delay={isInitialLoad ? 6.35 : 1.65}>
-                <p className="sm">&copy; Plated Stories</p>
-                <p className="sm">( Creative Content Agency )</p>
-              </Copy>
-            </div>
+        <div className="hero-side hero-side-right">
+          <Copy animateOnScroll={false} delay={isInitialLoad ? 5.6 : 0.55}>
+            <p className="hero-side-copy">
+              We create high-quality visual content for restaurants, cafes,
+              lifestyle brands and entrepreneurs that goes beyond aesthetics.
+              Through strategic storytelling, creativity and premium production,
+              we help brands build meaningful connections and stand out in a
+              crowded digital world.
+            </p>
+          </Copy>
+        </div>
 
-            <div className="hero-footer">
-              <Copy animateOnScroll={false} delay={isInitialLoad ? 6.05 : 1.15}>
-                <p className="lg">
-                  We create high-quality visual content for restaurants, cafes,
-                  lifestyle <br />
-                  brands and entrepreneurs that goes beyond aesthetics. Through
-                  strategic <br />
-                  storytelling, creativity and premium production, we help brands
-                  build <br />
-                  meaningful connections and stand out in <br />
-                  a crowded digital world.
-                </p>
-              </Copy>
+        <HeroVisual />
 
-              <Button delay={isInitialLoad ? 6.35 : 1.55} href="/studio">
-                Visit the Studio
-              </Button>
-            </div>
-          </div>
+        <div className="hero-button">
+          <Button delay={isInitialLoad ? 5.7 : 0.6} href="/studio">
+            Visit the Studio
+          </Button>
+        </div>
+
+        <div className="hero-copyright">
+          <Copy animateOnScroll={false} delay={isInitialLoad ? 5.7 : 0.6}>
+            <p className="sm">&copy; Plated Stories</p>
+            <p className="sm">( Creative Content Agency )</p>
+          </Copy>
         </div>
       </section>
 

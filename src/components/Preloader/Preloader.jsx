@@ -2,15 +2,36 @@
 import "./Preloader.css";
 import React, { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
 import CustomEase from "gsap/CustomEase";
 import { useGSAP } from "@gsap/react";
 import { useLenis } from "lenis/react";
 
-gsap.registerPlugin(useGSAP, SplitText, CustomEase);
+gsap.registerPlugin(useGSAP, CustomEase);
 CustomEase.create("hop", "0.9, 0, 0.1, 1");
 
 export let isInitialLoad = true;
+
+// Pool the slot-machine shuffle draws from — the studio's own gallery.
+const allImageSources = Array.from(
+  { length: 82 },
+  (_, i) => `/loader/loader-${i + 1}.jpg`
+);
+
+// The tile that survives the shuffle and zooms in to hand off to the hero.
+const HERO_IMG = allImageSources[0];
+
+// The nine tiles the grid starts on before the shuffle takes over (centre = hero).
+const initialGrid = [
+  allImageSources[1],
+  allImageSources[2],
+  allImageSources[3],
+  allImageSources[4],
+  HERO_IMG,
+  allImageSources[5],
+  allImageSources[6],
+  allImageSources[7],
+  allImageSources[8],
+];
 
 const Preloader = () => {
   const preloaderRef = useRef(null);
@@ -42,11 +63,7 @@ const Preloader = () => {
       const waitForFonts = async () => {
         try {
           await document.fonts.ready;
-          const customFonts = ["DM Sans"];
-          const fontCheckPromises = customFonts.map((fontFamily) => {
-            return document.fonts.check(`16px ${fontFamily}`);
-          });
-          await Promise.all(fontCheckPromises);
+          await document.fonts.check("16px DM Sans");
           await new Promise((resolve) => setTimeout(resolve, 100));
           return true;
         } catch (error) {
@@ -58,107 +75,117 @@ const Preloader = () => {
       const initializeAnimation = async () => {
         await waitForFonts();
 
-        gsap.set(".preloader-header h1", { opacity: 0 });
+        const scope = preloaderRef.current;
+        if (!scope) return;
 
-        const preloaderHeaderSplit = SplitText.create(".preloader-header h1", {
-          type: "chars",
-          charsClass: "char",
-          mask: "chars",
-        });
+        const gridImages = gsap.utils.toArray(scope.querySelectorAll(".img"));
+        const heroTile = scope.querySelector(".hero-img");
+        const otherTiles = gridImages.filter((tile) => tile !== heroTile);
 
-        const chars = preloaderHeaderSplit.chars;
+        const getRandomImageSet = () => {
+          const shuffled = [...allImageSources].sort(() => 0.5 - Math.random());
+          return shuffled.slice(0, 9);
+        };
 
-        chars.forEach((char, index) => {
-          gsap.set(char, { yPercent: index % 2 === 0 ? -100 : 100 });
-        });
+        // Slot-machine effect: every tile flips to a fresh random photo on a
+        // fixed cadence; on the final cycle the centre locks to the hero image.
+        const startImageRotation = () => {
+          const totalCycles = 12;
 
-        gsap.set(".preloader-header h1", { opacity: 1 });
+          for (let cycle = 0; cycle < totalCycles; cycle++) {
+            const randomImages = getRandomImageSet();
 
-        const preloaderImages = gsap.utils.toArray(".preloader-images .img");
-        const preloaderImagesInner = gsap.utils.toArray(
-          ".preloader-images .img img"
+            gsap.delayedCall(cycle * 0.12, () => {
+              gridImages.forEach((tile, index) => {
+                const imgElement = tile.querySelector("img");
+                if (!imgElement) return;
+
+                if (cycle === totalCycles - 1 && tile === heroTile) {
+                  imgElement.src = HERO_IMG;
+                  gsap.set(heroTile.querySelector("img"), { scale: 2 });
+                } else {
+                  imgElement.src = randomImages[index];
+                }
+              });
+            });
+          }
+        };
+
+        const tl = gsap.timeline();
+
+        // Phase A — the logo fills from muted to bright, line by line.
+        tl.to(
+          ".logo-line-1",
+          { backgroundPosition: "0% 0%", duration: 0.9, ease: "none" },
+          0.3
+        );
+        tl.to(
+          ".logo-line-2",
+          { backgroundPosition: "0% 0%", duration: 0.9, ease: "none" },
+          0.85
         );
 
-        const tl = gsap.timeline({ delay: 0.25 });
-
-        tl.to(".progress-bar", {
-          scaleX: 1,
-          duration: 4,
-          ease: "power3.inOut",
-        })
-          .set(".progress-bar", { transformOrigin: "right" })
-          .to(".progress-bar", {
-            scaleX: 0,
-            duration: 1,
-            ease: "power3.in",
-          });
-
-        preloaderImages.forEach((preloaderImg, index) => {
-          tl.to(
-            preloaderImg,
-            {
-              clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-              duration: 1,
-              ease: "hop",
-              delay: index * 0.75,
-            },
-            "-=5"
-          );
-        });
-
-        preloaderImagesInner.forEach((preloaderImageInner, index) => {
-          tl.to(
-            preloaderImageInner,
-            {
-              scale: 1,
-              duration: 1.5,
-              ease: "hop",
-              delay: index * 0.75,
-            },
-            "-=5.25"
-          );
-        });
-
+        // Phase B — the grid wipes open and starts shuffling.
         tl.to(
-          chars,
+          gridImages,
           {
-            yPercent: 0,
-            duration: 1,
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 0.8,
+            stagger: 0.04,
             ease: "hop",
-            stagger: 0.025,
+            onStart: startImageRotation,
           },
-          "-=5"
+          1.1
         );
 
         tl.to(
-          ".preloader-images",
+          ".preloader-loader",
+          { opacity: 0, duration: 0.4, ease: "power2.out" },
+          2.5
+        );
+
+        // Phase C — everything but the centre tile collapses away.
+        tl.to(
+          otherTiles,
           {
             clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-            duration: 1,
+            duration: 0.7,
+            stagger: 0.04,
             ease: "hop",
           },
-          "-=1.5"
+          2.8
         );
 
-        tl.to(
-          chars,
-          {
-            yPercent: (index) => (index % 2 === 0 ? 100 : -100),
-            duration: 1,
-            ease: "hop",
-            stagger: 0.025,
-          },
-          "-=2.5"
-        );
+        tl.to(".hero-img", { y: -30, duration: 0.5, ease: "hop" }, 3.3);
 
+        // Phase D — the hero tile pushes in and settles.
         tl.to(
-          ".preloader",
+          ".hero-img",
           {
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-            duration: 1.75,
+            scale: 4,
+            clipPath: "polygon(20% 8%, 80% 8%, 80% 92%, 20% 92%)",
+            duration: 1.1,
             ease: "hop",
             onStart: () => {
-              gsap.set(".preloader", { pointerEvents: "none" });
+              gsap.to(".hero-img img", {
+                scale: 1,
+                duration: 1.1,
+                ease: "hop",
+              });
+            },
+          },
+          3.7
+        );
+
+        // Phase E — the whole overlay wipes up to reveal the page beneath.
+        tl.to(
+          scope,
+          {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+            duration: 1.0,
+            ease: "hop",
+            onStart: () => {
+              gsap.set(scope, { pointerEvents: "none" });
             },
             onComplete: () => {
               setTimeout(() => {
@@ -167,7 +194,7 @@ const Preloader = () => {
               }, 100);
             },
           },
-          "-=0.5"
+          4.6
         );
       };
 
@@ -181,30 +208,28 @@ const Preloader = () => {
   }
 
   return (
-    <>
-      <div className="preloader" ref={preloaderRef}>
-        <div className="progress-bar"></div>
-
-        <div className="preloader-images">
-          <div className="img">
-            <img src="/featured-work/work-1.jpg" alt="" />
+    <div className="preloader" ref={preloaderRef}>
+      <div className="preloader-grid">
+        {[0, 1, 2].map((row) => (
+          <div className="grid-row" key={row}>
+            {[0, 1, 2].map((col) => {
+              const index = row * 3 + col;
+              const isHero = index === 4;
+              return (
+                <div className={`img${isHero ? " hero-img" : ""}`} key={col}>
+                  <img src={initialGrid[index]} alt="" />
+                </div>
+              );
+            })}
           </div>
-          <div className="img">
-            <img src="/featured-work/work-2.jpg" alt="" />
-          </div>
-          <div className="img">
-            <img src="/featured-work/work-5.jpg" alt="" />
-          </div>
-          <div className="img">
-            <img src="/featured-work/work-3.jpg" alt="" />
-          </div>
-        </div>
+        ))}
       </div>
 
-      <div className="preloader-header">
-        <h1>Plated Stories</h1>
+      <div className="preloader-loader">
+        <h1 className="logo-line-1">Plated</h1>
+        <h1 className="logo-line-2">Stories</h1>
       </div>
-    </>
+    </div>
   );
 };
 
